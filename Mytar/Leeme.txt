@@ -1,3 +1,4 @@
 Autor: Milagros del Rocío Peña Quineche
+Esta carpeta contiene la práctica 1, de la asignatura de sistemas operativos del Grado de Ingeniería de Software, Universidad Complutense de Madrid.
 Mytar es un programa que comprime ficheros en un fichero .mtar, además también se pueden extraer esos ficheros comprimidos.
 Dispones de un script para probar el funcionamiento de este programa.
