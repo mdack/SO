@@ -1,3 +1,3 @@
-Milagros del Roc�o Pe�a Quineche
-Laboratorio: 3
-Puesto: 14
+Autor: Milagros del Rocío Peña Quineche
+Mytar es un programa que comprime ficheros en un fichero .mtar, además también se pueden extraer esos ficheros comprimidos.
+Dispones de un script para probar el funcionamiento de este programa.
