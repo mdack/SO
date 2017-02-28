@@ -19,11 +19,6 @@ copynFile(FILE * origin, FILE * destination, int nBytes)
 {	int c = 0, wByte;
 	int contBytes = 0;
 
-	if(origin == NULL){
-		printf("The origin file is a null pointer\n");
-		return -1;
-	}
-
 	while((c != EOF) && (contBytes < nBytes)){
 		c = getc(origin);
 		if(c != EOF){
@@ -89,7 +84,7 @@ stHeaderEntry*
 readHeader(FILE * tarFile, int *nFiles)
 {	stHeaderEntry* array = NULL;
 	int nr_files = 0;
-	int i;
+	int i = 0;
 	char* name = NULL;
 	unsigned int size;
 
@@ -98,16 +93,18 @@ readHeader(FILE * tarFile, int *nFiles)
 	}
 
 	array=malloc(sizeof(stHeaderEntry)*nr_files);
-
-	for(i = 0; i < nr_files; i++){
+	
+	do{
 		name = loadstr(tarFile);
 		if(name != NULL){
 			array[i].name = name;
 			if(fread(&size,sizeof(unsigned int), 1, tarFile) > 0){
 				array[i].size = size;
 			}
-		}
-	}
+			i++;
+		}	
+
+	}while((i < nr_files) && (name != NULL));}
 
 
 	(*nFiles) = nr_files;
